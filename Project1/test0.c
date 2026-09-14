@@ -130,7 +130,7 @@ int main(void)
 		.name = "Bob",
 		.sex = "male"
 	};//.成员名 = 值 ：指定成员初始化，无需遵守顺序
-		//访问
+	//访问
 	printf("%d\n", stu1.ID);
 		//enum是一组固定整型常量，而struct是打包多个变量
 
@@ -205,8 +205,8 @@ int main(void)
 		//强制类型转换 (类型)，例如下
 	int d2 = (int)3.25;
 	printf("d2 = %d\n", d2);
-		//关系操作符
-			// < > <= >= != ==
+	//关系操作符
+		// < > <= >= != ==
 
 	//逻辑操作符
 		// && 逻辑与
@@ -299,7 +299,7 @@ int main(void)
 	int a_sum = 0;
 	a_sum = a1 + a2;
 	printf("sum = %d\n", a_sum);
-		//为后续测试方便，现注释scanf以取消作用
+	//为后续测试方便，现注释scanf以取消作用
 
 	//常量
 		//字面变量
@@ -329,7 +329,7 @@ int main(void)
 		//标准应当使用%zu，但微软的c库并没有实现，因而对于这里8字节的无符号整型只好使用%llu
 		//加一个#include <string.h>，用上了
 
-	//选择语句
+	//选择语句if
 	if (my_sex == 0)
 		printf("male\n");
 	else if (my_sex == 1)
@@ -373,10 +373,48 @@ int main(void)
 		scanf("%d", &password2);
 	} while (password1!=password2);
 	*/
-	//同理上述内容注释掉
+	//同理因scanf上述内容注释掉
 
-//函数
-	//例1，两数相加，见隔壁ftest0.c
+	//多分支选择switch  分支标签case 默认分支default
+		//根据表达式的值，从多个代码块中选择一个执行
+		// }后不加;
+		//所有case分支不匹配时执行default
+		//需加break来跳出整个switch，否则继续执行接下来的case分支
+		//
+	int e1 = 2;
+	switch (e1)//表达式不能为浮点数，字符串，数组
+	{
+	case 1:
+		printf("one\n");
+		break;
+	case 2:
+		printf("two\n");
+		break;
+	case 3:
+		printf("three\n");
+		break;
+	default:
+		printf("zero\n");
+	}
+	//break
+		//跳出循环（for，while，do...while）
+		//跳出switch
+		//不能跳出if
+
+	//continue
+		//跳出本轮循环，直接开始下一次判定
+
+	//goto
+		//无条件跳转到同一函数内标记的标签继续执行
+	/*
+	goto skip;
+	printf("这行不会执行\n");
+	skip:
+	printf("跳到这里\n");
+	*/
+
+	//函数
+		//例1，两数相加，见隔壁ftest0.c
 	int c1 = 1;
 	int c2 = 2;
 	printf("%d\n", addf(c1, c2));
