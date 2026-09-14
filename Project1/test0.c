@@ -134,6 +134,10 @@ int main(void)
 	printf("%d\n", stu1.ID);
 		//enum是一组固定整型常量，而struct是打包多个变量
 
+	//union
+		//共用体
+		//多个成员共享一块内存，同一时刻只能调用其中一个成员，节省空间
+
 
 	//占位符%d
 	printf("%d\n", 100);
@@ -295,37 +299,37 @@ int main(void)
 	int a_sum = 0;
 	a_sum = a1 + a2;
 	printf("sum = %d\n", a_sum);
-	//为后续测试方便，现注释scanf以取消作用
+		//为后续测试方便，现注释scanf以取消作用
 
-//常量
-	//字面变量
-	// const修饰的常变量 例：const int num = 0
-	// #define定义的标识符常量
+	//常量
+		//字面变量
+		// const修饰的常变量 例：const int num = 0
+		// #define定义的标识符常量
 
-//字符串->数据，字符数组->容器，
-	// 字符串需以\0结尾，其中\0表示结束字符
-	//' '代表单个字符常量，类型是char
-	// " "代表字符串（字符数组，末尾自带\0，且\0在strlen不计入长度），类型大多数时候隐示转化为char*
+	//字符串->数据，字符数组->容器，
+		// 字符串需以\0结尾，其中\0表示结束字符
+		//' '代表单个字符常量，类型是char
+		// " "代表字符串（字符数组，末尾自带\0，且\0在strlen不计入长度），类型大多数时候隐示转化为char*
 	char b1[] = "abc";
 	printf("%s\n", b1);
 	char b2[] = { 'a','b','c','\0' };
 	printf("%s\n", b2);
 
-	//strlen求字符串长度,返回size_t，测字符串时直接填入，（不计\0），例：
+		//strlen求字符串长度,返回size_t，测字符串时直接填入，（不计\0），例：
 
 	printf("%zu\n", strlen(b1));
 	printf("%zu\n", strlen(b2));
 
 
-	//然而sizeof会计入\0，包括自动补充的
+		//然而sizeof会计入\0，包括自动补充的
 
 	printf("%zu\n", sizeof(b1));
 	printf("%zu\n", sizeof(b2));
 
-	//标准应当使用%zu，但微软的c库并没有实现，因而对于这里8字节的无符号整型只好使用%llu
-	//加一个#include <string.h>，用上了
+		//标准应当使用%zu，但微软的c库并没有实现，因而对于这里8字节的无符号整型只好使用%llu
+		//加一个#include <string.h>，用上了
 
-//选择语句
+	//选择语句
 	if (my_sex == 0)
 		printf("male\n");
 	else if (my_sex == 1)
